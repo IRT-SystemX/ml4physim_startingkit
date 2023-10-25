@@ -5,7 +5,7 @@ In the following, we describe the content of this repository. We start by descri
 
 - **0_Basic_Competition_Information**: This notebook contains the general information concerning the competition organisation, phases, deadlines and terms. The content is same as the one shared in the competition Codabench page. It should be carefully readen before any contribution and submission. *The participation of Non legal participants will be ignored.* 
 
-- **1-Airfoil_design_basic_simulation**: This notebook aims to familiarize the participants with the use case and to facilitate their comprehension. It shows how to manipulate the Airfoil solver through some visualizations.
+- **1-Airfoil_design_basic_simulation**: This notebook aims to familiarize the participants with the use case and to facilitate their comprehension. It shows how to manipulate the Airfoil usecase through some visualizations.
 
 - **2-Import_Airfoil_design_Dataset**: Shows how the challenge datasets could be downloaded and imported using proper functions. These data will be used in the following notebook to train and evaluate an augmented simulator. 
 
