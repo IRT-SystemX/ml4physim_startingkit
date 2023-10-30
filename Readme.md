@@ -19,9 +19,5 @@ In the following, we describe the content of this repository. We start by descri
 
 Other folder and files in this starting kit are :
 
-- **configs folder**: It includes configuration files required whether by a physical solver for importing the datasets or by an augmented simulator to import the set of its hyperparameters. 
-
-- **input_data_local**: It contains few observations (demo dataset) to verify that all the configuration works properly and the participants could train and evaluate a simple Augmented Simulator without any errors.
-
 - **related_papers**: It includes the scientific papers related to this competition. We encourage the participants to read these papers for more details and information concerning the evaluation framework and the considered use case.
 
