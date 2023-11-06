@@ -12,9 +12,9 @@ In the following, we describe the content of the jupyter notebooks :
 - **3-Reproduce_baseline_results**: This notebook shows how the baseline results could be reproduced. It includes the whole pipeline of training, evaluation and score calculation of an augmented simulator using [LIPS platform](https://github.com/IRT-SystemX/LIPS). 
 
 - **4-How_to_Contribute**: This notebook shows 3 ways of contribution for beginner, intermediate and advanced users. The submissions should respect one of these forms to be valid and also to enable their proper evaluation through the LIPS platform which will be used for the final evaluation of the results.
-* Beginner Contributor: YOu only have to calibrate the parameters of existing augmented simulators
-* Intermediate Contributor: You can implement an augmented simulator respecting a given template (provided by the LIPS platform)
-* Advanced Contributor: you can implement your architecture independently from LIPS platform and use only the evaluation part of the framework to assess your model performance.
+       * Beginner Contributor: YOu only have to calibrate the parameters of existing augmented simulators
+       * Intermediate Contributor: You can implement an augmented simulator respecting a given template (provided by the LIPS platform)
+       * Advanced Contributor: you can implement your architecture independently from LIPS platform and use only the evaluation part of the framework to assess your model performance.
 
 - **5-Scoring**: This notebook shows firstly how the score is computed by describing its different components. Next, it provides a script which can be used locally by the participants to obtain a score for their contributions. We encourage participants to evaluate their solutions via codabench (which uses the same scoring module as the one described in this notebook). 
 
