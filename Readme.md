@@ -3,7 +3,7 @@ This starting kit provides a set of jupyter notebooks helping the challenge part
 
 In the following, we describe the content of the jupyter notebooks : 
 
-- **0_Basic_Competition_Information**: This notebook contains general information concerning the competition organization, phases, deadlines and terms. The content is the same as the one shared in the competition Codabench page. 
+- **0_Basic_Competition_Information**: This notebook contains general information concerning the competition organization, phases, deadlines and terms. The content is the same as the one shared in the competition Codabench page. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IRT-SystemX/ml4physim_startingkit/blob/main/0_Basic_Competition_Information.ipynb) 
 
 - **1-Airfoil_design_basic_simulation**: This notebook aims to familiarize the participants with the use case and to facilitate their comprehension. It allows the visualization of some simulation results.
 
