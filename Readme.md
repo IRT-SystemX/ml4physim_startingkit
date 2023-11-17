@@ -1,6 +1,14 @@
 # Starting Kit - Machine Learning for Physical Simulation Challenge
 This starting kit provides a set of jupyter notebooks helping the challenge participants to better understand the use case, the dataset and how to contribute to this competition. For general information concerning the challenge and submit your solutions, you can refer to the competition [Codabench page](https://www.codabench.org/competitions/1534/).
 
+Prerequisites
+--------------
+Most of the notebooks provided in this repository are based on LIPS platform. To be able to execute the jupyter notebooks provided in this repository and described in the following section, the [LIPS platform](https://lips.irt-systemx.fr/) should be installed properly. The installation procedure is explained in the [LIPS package repository](https://github.com/IRT-SystemX/LIPS), in [this section](https://github.com/IRT-SystemX/LIPS#installation).
+
+To get familiar with LIPS platform itself, it includes its own set of [jupyter notebooks](https://github.com/IRT-SystemX/LIPS/tree/main/getting_started). For this competition, the participants may focus on [these notebooks](https://github.com/IRT-SystemX/LIPS/tree/main/getting_started/AirfoilUsecase) (focusing on Airfoil use case) provided in LIPS package.  
+
+Notebooks description
+---------------------
 In the following, we describe the content of the jupyter notebooks : 
 
 - **0_Basic_Competition_Information**: This notebook contains general information concerning the competition organization, phases, deadlines and terms. The content is the same as the one shared in the competition Codabench page. [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IRT-SystemX/ml4physim_startingkit/blob/main/0_Basic_Competition_Information.ipynb) 
