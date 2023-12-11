@@ -1,0 +1,66 @@
+{
+  "total_time": 3659.170153617859,
+  "training_time": 243.62113523483276,
+  "test_evaluation_time": 895.3059179782867,
+  "test_mean_simulation_time": 4.476529589891434,
+  "test_ood_evaluation_time": 2227.2575817108154,
+  "test_ood_mean_simulation_time": 4.490438672804063,
+  "fc_metrics_test": {
+    "test": {
+      "ML": {
+        "MSE": {
+          "x-velocity": 849.104967061849,
+          "y-velocity": 992.2993736875788,
+          "pressure": 7932974.373023037,
+          "turbulent_viscosity": 0.00021126770588563356
+        },
+        "MSE_surfacic": { "pressure": 0.00021126770588563356 },
+        "MAPE": {
+          "x-velocity": 1133206909600666.2,
+          "y-velocity": 221651935608060.62,
+          "pressure": 27.323034175859178,
+          "turbulent_viscosity": 241533626453.08017
+        },
+        "MAPE_surfacic": { "pressure": 241533626453.08017 }
+      },
+      "Physics": {
+        "spearman_correlation_drag": -0.04977124428110703,
+        "spearman_correlation_lift": 0.03774844371109278,
+        "mean_relative_drag": 1.0064654847579768,
+        "std_relative_drag": 0.04727271235586436,
+        "mean_relative_lift": 0.9944766004156574,
+        "std_relative_lift": 0.05714659035960114
+      },
+      "IndRed": {}
+    }
+  },
+  "fc_metrics_test_ood": {
+    "test_ood": {
+      "ML": {
+        "MSE": {
+          "x-velocity": 978.2395788540763,
+          "y-velocity": 1019.5199883216022,
+          "pressure": 10071412.628784195,
+          "turbulent_viscosity": 0.0002311535816324853
+        },
+        "MSE_surfacic": { "pressure": 0.0002311535816324853 },
+        "MAPE": {
+          "x-velocity": 1141786141901104.8,
+          "y-velocity": 221047847101938.66,
+          "pressure": 28.63664563331987,
+          "turbulent_viscosity": 281665402930.20294
+        },
+        "MAPE_surfacic": { "pressure": 281665402930.20294 }
+      },
+      "Physics": {
+        "spearman_correlation_drag": -0.15600317447205223,
+        "spearman_correlation_lift": -0.061445112512809,
+        "mean_relative_drag": 0.9932011145580804,
+        "std_relative_drag": 0.04371394452955199,
+        "mean_relative_lift": 0.99795085815596,
+        "std_relative_lift": 0.03723113835018726
+      },
+      "IndRed": {}
+    }
+  }
+}
