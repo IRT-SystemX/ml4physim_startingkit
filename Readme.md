@@ -25,6 +25,8 @@ In the following, we describe the content of the jupyter notebooks :
        * Intermediate Contributor: You can implement an augmented simulator respecting a given template (provided by the LIPS platform)
        * Advanced Contributor: you can implement your architecture independently from LIPS platform and use only the evaluation part of the framework to assess your model performance.
 
+- **4a-How_to_Contribute_Tensorflow**: This notebook shows how to contribute using the existing augmented simulators based on Tensorflow library. The procedure to customize the architecture is fairly the same as pytorch (shown in Notebook 4).
+
 - **5-Scoring**: This notebook shows firstly how the score is computed by describing its different components. Next, it provides a script which can be used locally by the participants to obtain a score for their contributions. We encourage participants to evaluate their solutions via codabench (which uses the same scoring module as the one described in this notebook). [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/IRT-SystemX/ml4physim_startingkit/blob/main/5_Scoring.ipynb)
 
 - **6_Submit_to_Codabench**: It shows, step-by-step, how to submit your solution (augmented simulator) using the [competition Codabench page](https://www.codabench.org/competitions/1534/). 
