@@ -147,3 +147,7 @@ docs/build
 
 # data
 Dataset/
+
+# submission
+*.zip
+
