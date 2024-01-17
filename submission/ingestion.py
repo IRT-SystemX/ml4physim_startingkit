@@ -50,11 +50,13 @@ import sys
 import datetime
 import json
 import importlib
+import dill
 the_date = datetime.datetime.now().strftime("%y-%m-%d-%H-%M")
 
 # =========================== BEGIN PROGRAM ================================
 def fileExists(path):
     if not os.path.exists(path):
+        print(path)
         raise ModelApiError("Missing file : ", path)
         exit_program()   
 
@@ -118,14 +120,13 @@ if __name__=="__main__" :
 
 
     start_total_time = time.time()
-
     from lips import get_root_path
 
     LIPS_PATH = get_root_path()
     # dataset recovered from host
     DIRECTORY_NAME = '/app/data/Dataset'
     BENCHMARK_NAME = "Case1"
-    LOG_PATH = output_dir + "lips_logs.log"
+    LOG_PATH = "/app/lips_logs.log"
     BENCH_CONFIG_PATH = os.path.join("/LIPS","configurations","airfoil","benchmarks","confAirfoil.ini") #Configuration file related to the benchmark
     SIM_CONFIG_PATH = os.path.join(submission_dir,"config.ini")
     SAVE_PATH = os.path.join(output_dir,"AirfRANSModel")
@@ -156,14 +157,15 @@ if __name__=="__main__" :
         exit(1)
 
 
-
-    print("Preparing benchmark")
-    from lips.benchmark.airfransBenchmark import AirfRANSBenchmark
-    benchmark=AirfRANSBenchmark(benchmark_path = DIRECTORY_NAME,
-                                config_path = BENCH_CONFIG_PATH,
-                                benchmark_name = BENCHMARK_NAME,
-                                log_path = LOG_PATH)
-    benchmark.load(path=DIRECTORY_NAME)  
+    # Benchmark loaded through dill to simplify 
+    # print("Preparing benchmark")
+    # from lips.benchmark.airfransBenchmark import AirfRANSBenchmark
+    # # benchmark=AirfRANSBenchmark(benchmark_path = DIRECTORY_NAME,
+    # #                             config_path = BENCH_CONFIG_PATH,
+    # #                             benchmark_name = BENCHMARK_NAME,
+    # #                             log_path = LOG_PATH)
+    # # benchmark.load(path=DIRECTORY_NAME)  
+    dill.load_session("/app/data/benchmark_session")
 
     
 
@@ -197,7 +199,7 @@ if __name__=="__main__" :
     elif simulator_parameters["scaler_type"] == "custom":
         print("Custom scaler")
         print("Loading custom scaler from submission directory")
-        fileExists(os.path.join(submission_dir,simulator_parameters["scaler_file"],".py"))
+        fileExists(os.path.join(submission_dir,simulator_parameters["scaler_file"]+".py"))
 
         ## load custom scaler from submission directory
         scaler_module = importlib.import_module(simulator_parameters["scaler_file"])
@@ -243,7 +245,7 @@ if __name__=="__main__" :
                            bench_config_name=BENCHMARK_NAME,
                            sim_config_path=SIM_CONFIG_PATH,
                            sim_config_name=simulator_parameters["config_name"],
-                           architecture_type=simulator_parameters["architecture_type"],
+                           architecture_type="Classical",
                            **run_parameters["simulator_extra_parameters"]                      
                           )
 
@@ -251,7 +253,7 @@ if __name__=="__main__" :
         print("Custom torch LIPS simulator")
         print("Loading custom simulator from submission directory")
         ## load custom simulator from submission directory
-        fileExists(os.path.join(submission_dir,simulator_parameters["simulator_file"],'.py'))
+        fileExists(os.path.join(submission_dir,simulator_parameters["simulator_file"]+'.py'))
         # Import user-provided simulator code
         simulator_module = importlib.import_module(simulator_parameters["simulator_file"])
         simulator_class = getattr(simulator_module, simulator_parameters["model"])
@@ -266,7 +268,7 @@ if __name__=="__main__" :
                            bench_config_name=BENCHMARK_NAME,
                            sim_config_path=SIM_CONFIG_PATH,
                            sim_config_name=simulator_parameters["config_name"],
-                           architecture_type=simulator_parameters["architecture_type"],
+                           architecture_type="Classical",
                            **run_parameters["simulator_extra_parameters"]                      
                           )
 
@@ -295,14 +297,14 @@ if __name__=="__main__" :
 
     elif simulator_parameters["simulator_type"] == "custom":
         print("Loading custom simulator " + simulator_parameters["model"])
+        print("Loading custom simulator " + simulator_parameters["simulator_file"])
         ## load custom simulator from submission directory
-        fileExists(os.path.join(submission_dir,simulator_parameters["simulator_file"],'.py'))
+        fileExists(os.path.join(submission_dir,simulator_parameters["simulator_file"]+'.py'))
         # Import user-provided simulator code
         simulator_module = importlib.import_module(simulator_parameters["simulator_file"])
         simulator_class = getattr(simulator_module, simulator_parameters["model"])
 
         simulator = simulator_class(benchmark=benchmark,
-                                log_path="log_benchmark",
                                 **run_parameters["simulator_extra_parameters"]
                                 )
 
