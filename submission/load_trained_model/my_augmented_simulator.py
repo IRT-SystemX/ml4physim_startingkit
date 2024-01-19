@@ -106,6 +106,20 @@ class AugmentedSimulator():
         decoder = MLP(self.hparams['decoder'], batch_norm = False)
         self.model = NN(self.hparams, encoder, decoder)
 
+    def restore(self, path):
+        self.load_model(path_model=os.path.join(path, 'SaveFCModel.pt'), path_scaler=os.path.join(path, 'SaveScaler'))
+
+    def save_model(self, path_model:str,path_scaler:str):
+        modelWeight=self.model.state_dict()
+        torch.save(modelWeight,path_model)
+        self.scaler.save(path_scaler)
+
+    def load_model(self, path_model:str,path_scaler:str):
+        model_loader=torch.load(path_model)
+        self.model.load_state_dict(model_loader)
+        self.model = self.model.to(self.device)
+        self.scaler.load(path_scaler)
+
     def process_dataset(self, dataset, training: bool) -> DataLoader:
         coord_x=dataset.data['x-position']
         coord_y=dataset.data['y-position']
